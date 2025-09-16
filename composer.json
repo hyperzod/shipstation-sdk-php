@@ -1,0 +1,42 @@
+{
+  "name": "hyperzod/shipstation-sdk-php",
+  "description": "A PHP SDK to integrate Shipstation with your application.",
+  "keywords": [
+    "hyperzod",
+    "shipstation-sdk-php"
+  ],
+  "homepage": "https://github.com/hyperzod/shipstation-sdk-php",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Mohd Farhan Rizwan",
+      "email": "farhan@hyperzod.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.4|^8.0",
+    "guzzlehttp/guzzle": "^7.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Hyperzod\\ShipstationSdkPhp\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Hyperzod\\ShipstationSdkPhp\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
