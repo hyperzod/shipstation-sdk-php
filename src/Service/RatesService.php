@@ -4,18 +4,18 @@ namespace Hyperzod\ShipstationSdkPhp\Service;
 
 use Hyperzod\ShipstationSdkPhp\Enums\HttpMethodEnum;
 
-class JobService extends AbstractService
+class RatesService extends AbstractService
 {
    /**
-    * Create a job on shipstation
+    * Get rates on shipstation
     *
     * @param array $params
     *
     * @throws \Hyperzod\ShipstationSdkPhp\Exception\ApiErrorException if the request fails
     *
     */
-   public function create(array $params)
+   public function getRates(array $params)
    {
-      return $this->request(HttpMethodEnum::POST, '/jobs', $params);
+      return $this->request(HttpMethodEnum::POST, '/rates', $params);
    }
 }

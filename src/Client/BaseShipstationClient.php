@@ -62,7 +62,6 @@ class BaseShipstationClient implements ShipstationClientInterface
    {
       $client = new Client([
          'headers' => [
-            'accept' => 'application/json',
             'content-type' => 'application/json',
             'API-Key' => $this->getApiKey()
          ]
@@ -126,15 +125,11 @@ class BaseShipstationClient implements ShipstationClientInterface
 
       if ($status_code >= 200 && $status_code < 300) {
          $response = json_decode($response->getBody(), true);
-         if (isset($response["data"])) {
-            return $response["data"];
-         }
+         return $response;
          throw new Exception("Data node not set in server response");
       } else {
          $response = json_decode($response->getBody(), true);
-         if (isset($response["errors"])) {
-            throw new Exception($response["errors"][0]["message"]);
-         }
+         return $response;
          throw new Exception("Errors node not set in server response");
       }
    }
